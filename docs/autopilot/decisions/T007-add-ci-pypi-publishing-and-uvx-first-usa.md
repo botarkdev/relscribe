@@ -31,7 +31,7 @@ The human prerequisites (PyPI pending publisher, GitHub environment `pypi`, squa
 
 | # | Question | Options | Decision | Reason |
 |---|---|---|---|---|
-| 1 | Publish to PyPI | publish · no registry for now | **no registry for now; consumers run `uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe`** | The human's decision on 2026-09-18. It replaces the earlier PyPI choice. The `vX.Y.Z` git tag is the release artifact. |
+| 1 | Publish to PyPI | publish · no registry for now | **no registry for now; consumers run `uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe`** | The human's decision on 2026-09-18. It replaces the earlier PyPI choice. The `vX.Y.Z` git tag is the release artifact. |
 
 Answered by the human. Scope decisions 1 and 2 (upload tool, when to publish) no longer apply.
 

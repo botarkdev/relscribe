@@ -27,24 +27,24 @@ Before 1.0.0, a breaking change bumps MINOR instead of MAJOR.
 relscribe is not published to any registry. A release is a `vX.Y.Z` tag in this git repository. The recommended way to run it is `uvx`, with the tag pinned in each repository:
 
 ```sh
-uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe <command>
+uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe <command>
 ```
 
 Nothing is installed on the machine: uv builds the tagged version once and caches it. The tag is written wherever the repository calls relscribe, such as its CI workflows, scripts or `package.json`. So every developer, agent and CI job runs the same version, and upgrading is a reviewed change. In this README, `vX.Y.Z` stands for the tag you pin, and every example uses this form.
 
-For a private fork, or in CI that authenticates with SSH, use `git+ssh://git@github.com/wadsworthai/relscribe@vX.Y.Z` as the URL. CI needs read access to the repository either way.
+For a private fork, or in CI that authenticates with SSH, use `git+ssh://git@github.com/botarkdev/relscribe@vX.Y.Z` as the URL. CI needs read access to the repository either way.
 
 In a Python project managed with uv, you can instead add relscribe as a development dependency. `uv.lock` then pins the commit.
 
 ```sh
-uv add --dev "relscribe @ git+https://github.com/wadsworthai/relscribe@vX.Y.Z"
+uv add --dev "relscribe @ git+https://github.com/botarkdev/relscribe@vX.Y.Z"
 uv run relscribe <command>
 ```
 
 ### Installing globally (not recommended)
 
 ```sh
-uv tool install git+https://github.com/wadsworthai/relscribe@vX.Y.Z
+uv tool install git+https://github.com/botarkdev/relscribe@vX.Y.Z
 ```
 
 This works, but the version then depends on the machine rather than the repository, so different people and CI may run different versions. Prefer the pinned `uvx` form above.
@@ -63,8 +63,8 @@ Every command supports:
 Checks that subjects are Conventional Commits. You can give subjects directly, for example a pull request title, or check the commits in a range. Merge commits are skipped.
 
 ```sh
-uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe lint "feat(api): add sessions"
-uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe lint --range origin/main..HEAD
+uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe lint "feat(api): add sessions"
+uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe lint --range origin/main..HEAD
 ```
 
 ### `status`
@@ -72,7 +72,7 @@ uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe lint --
 Reports, for each unit, the current version, the base the commits are counted from, the commits that count, the next version and any warnings. It changes nothing.
 
 ```sh
-uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe status
+uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe status
 ```
 
 ### `release`
@@ -85,7 +85,7 @@ Writes the next version, the `sync` files and the changelog of every unit that h
 | `--branch` | First create and switch to `release/<YYYY-MM-DD>[-N]` (UTC date) |
 
 ```sh
-uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe release --branch --commit
+uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe release --branch --commit
 ```
 
 Push the branch and open a pull request titled like the release commit. Once it is merged, `tag` tags it.
@@ -100,8 +100,8 @@ Tags every release commit in `<from>..<to>`: a commit is a release when it raise
 | `--dry-run` | Create and push nothing; report each tag it would create as `would-create` |
 
 ```sh
-uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe tag "$BEFORE..$AFTER" --push origin
-uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe tag --dry-run "$SHA^..$SHA"
+uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe tag "$BEFORE..$AFTER" --push origin
+uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe tag --dry-run "$SHA^..$SHA"
 ```
 
 ### Exit codes
@@ -155,7 +155,7 @@ jobs:
       - uses: astral-sh/setup-uv@v10.1.0
       - env:
           TITLE: ${{ github.event.pull_request.title }}
-        run: uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe lint "$TITLE"
+        run: uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe lint "$TITLE"
 ```
 
 Tag each release merged to the release branch. The job needs full history and tags, a committer identity and `contents: write`:
@@ -182,7 +182,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe tag "$BEFORE..$AFTER" --push origin --json > tags.json
+          uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe tag "$BEFORE..$AFTER" --push origin --json > tags.json
 ```
 
 Tags pushed with the default `GITHUB_TOKEN` do not trigger other workflows. So if a created tag should start a build, publish or deploy, do it in later steps or jobs of this workflow, reading the tags with `"result": "created"` from `tags.json`.
@@ -196,15 +196,15 @@ In a JavaScript repository, pin the version in `package.json` scripts:
 ```json
 {
   "scripts": {
-    "release": "uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe release --branch --commit",
-    "release:status": "uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe status"
+    "release": "uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe release --branch --commit",
+    "release:status": "uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe status"
   }
 }
 ```
 
 ## Migrating an existing repository
 
-Start with `uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe status`. It changes nothing and shows, for each unit, the base, the commits that count and any warnings.
+Start with `uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe status`. It changes nothing and shows, for each unit, the base, the commits that count and any warnings.
 
 - **Existing tags.** Set `tag`, globally or per unit, to the format the repository already uses, such as `"v{version}"` or `"{dir}-v{version}"`. The tag of a unit's current version then becomes its base.
 - **Existing changelogs.** They are kept. A release inserts its section below `## [Unreleased]`, or before the first `##` heading when there is none. Existing lines are never rewritten.

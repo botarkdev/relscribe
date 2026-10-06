@@ -5,15 +5,15 @@
   ],
   "extras": {},
   "files": {
-    ".claude/skills/taskrail-autopilot/SKILL.md": "f106726b08c06a6c106984c2851cee4cd08d699e8aa89162f3c1b5ef88fae660",
+    ".claude/skills/taskrail-autopilot/SKILL.md": "73d3af8ee25f978244fcdbdfd0527ca300b70abb846f359a62f9e5402957be2e",
     ".claude/skills/taskrail-autopilot/references/decision-record.md": "a69e2633f0941a4ca691c7d891ff1dd9a4ccc40c7b85266e230e040c0e59a072",
     ".claude/skills/taskrail-autopilot/references/gate-review.md": "62861dda760c8b947ed35d49e156ba0790fc6961bb280f7a91e8c571416ade3f",
     ".claude/skills/taskrail-autopilot/references/lane-brief.md": "35edb1bd261abbc716d0e298973192202c0eaf786ddac2ec7561d58bf99a4178",
-    ".claude/skills/taskrail-bug/SKILL.md": "cbc888e140aa874accdcfe773b4a28717a1cc778f0f20055863cf6f697eeed9a",
-    ".claude/skills/taskrail-chore/SKILL.md": "12ea1282480b4edc1dccae753a58ab8aad0aa6c574a4e5a667ddd807a3f32f76",
-    ".claude/skills/taskrail-feature/SKILL.md": "fdd4498d727fc0e5e49d8a87845c35e11c930ae1351d8779e36143aa8c28db43",
-    ".claude/skills/taskrail-spike/SKILL.md": "1aec4faaeb439879c8a10b89ba1fa15768846e95214537ee147da78d61710546",
-    ".claude/skills/taskrail/SKILL.md": "cd9a5f93a907f6d9a7aeb7268232cde0bb5740250b8b97845c01fa261e8fc4b3",
-    ".taskrail/bin/taskrail": "f2af3eccab0c43b2baf9e7fdbd7a788bc7e0b04609f5f8469ad0fd532bf95637"
+    ".claude/skills/taskrail-bug/SKILL.md": "851ecdb8da5c581407db5c1f548c80adab6acf4bdd0a6ad23490b62d0d02b307",
+    ".claude/skills/taskrail-chore/SKILL.md": "0f9ca49b0d0c76b40c68568e5b909f15214e262bb937504ba0f974b2ebf779fe",
+    ".claude/skills/taskrail-feature/SKILL.md": "3592fa1c628ada10802d54bcdc802a01a247583147efe9ef174d804a93d0727f",
+    ".claude/skills/taskrail-spike/SKILL.md": "8033cf688153a279512cbd9102a04e4cea937568dda87f96f0373b5f39c15fd1",
+    ".claude/skills/taskrail/SKILL.md": "2858365746284d7bb0e0742ad02c18229cb39d8179a271fcaad2fd12ebd00052",
+    ".taskrail/bin/taskrail": "573bdb40f211cac29a5d8938979a48c8b520f47a2e289f0425f26a0151208045"
   }
 }
