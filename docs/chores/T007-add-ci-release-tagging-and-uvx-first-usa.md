@@ -10,7 +10,7 @@ This task gives the repository:
 
 T010 then cuts 0.1.0 by following `docs/releasing.md`.
 
-**Scope change (human, during implement):** relscribe is not published to PyPI or any other registry for now. The `vX.Y.Z` git tag is the release artifact. Consumers run a pinned tag with `uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe`. The publish job, the `pypi` environment and every PyPI mention were therefore dropped from the approved change set. The task was retitled to match. Its artifact path and branch name keep the original wording.
+**Scope change (human, during implement):** relscribe is not published to PyPI or any other registry for now. The `vX.Y.Z` git tag is the release artifact. Consumers run a pinned tag with `uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe`. The publish job, the `pypi` environment and every PyPI mention were therefore dropped from the approved change set. The task was retitled to match. Its artifact path and branch name keep the original wording.
 
 The premises held at `origin/main` (3b65731): there was no `.github/`, no `relscribe.toml` and no `CHANGELOG.md`, and `pyproject.toml` had version `0.0.0`.
 
@@ -71,8 +71,8 @@ sync = [
   - Requirements: uv (which provides Python) and git.
   - "Running relscribe":
     - relscribe is not in a registry;
-    - the recommended form is `uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe <command>`, pinned per repository, with nothing installed;
-    - `git+ssh://git@github.com/wadsworthai/relscribe@vX.Y.Z` for a private fork or SSH CI, and CI needs read access to the repository;
+    - the recommended form is `uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe <command>`, pinned per repository, with nothing installed;
+    - `git+ssh://git@github.com/botarkdev/relscribe@vX.Y.Z` for a private fork or SSH CI, and CI needs read access to the repository;
     - `uv add --dev "relscribe @ git+https://…@vX.Y.Z"` for Python projects;
     - "Installing globally (not recommended)" with `uv tool install git+https://…@vX.Y.Z`.
   - Usage: `lint`, `status`, `release` and `tag` (with `--push` and `--dry-run`), each with the git `uvx` form. The flag and exit-code tables stay.

@@ -2,7 +2,7 @@ name: release
 
 # Tags every release merged to main. The vX.Y.Z tag is the release artifact:
 # relscribe is not published to any registry, and consumers run a pinned tag with
-# `uvx --from git+https://github.com/wadsworthai/relscribe@vX.Y.Z relscribe`.
+# `uvx --from git+https://github.com/botarkdev/relscribe@vX.Y.Z relscribe`.
 # This repository runs its own source (uv run) because it is relscribe itself.
 
 on:
